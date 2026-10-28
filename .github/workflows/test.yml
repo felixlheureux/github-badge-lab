@@ -1,0 +1,37 @@
+name: Test tracker
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Validate catalog and behavior
+        run: |
+          python -m json.tool achievements.json > /dev/null
+          python -m unittest -v
+          python tracker.py --merged 0
+          python tracker.py --merged 16
+          python tracker.py --merged 1024
+      - name: Reject invalid input
+        run: |
+          if python tracker.py --merged -1; then
+            echo 'Negative merge counts must fail.'
+            exit 1
+          fi

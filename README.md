@@ -1,5 +1,7 @@
 # GitHub Badge Lab
 
+[![Test tracker](https://github.com/felixlheureux/github-badge-lab/actions/workflows/test.yml/badge.svg)](https://github.com/felixlheureux/github-badge-lab/actions/workflows/test.yml)
+
 A small achievement tracker and a place to practice GitHub's issue and pull
 request workflows. Work stays in this repository.
 
@@ -14,6 +16,10 @@ python3 -m unittest -v
 
 The tracker prints the last reached Pull Shark milestone, the next target,
 and the number of merges remaining. Negative counts are rejected.
+
+GitHub Actions runs the offline tests and CLI smoke checks on Python 3.10 and
+3.13 for pull requests and changes to `main`. Live profile requests stay manual
+so CI does not depend on external profile availability or account credentials.
 
 To read current activity and publicly displayed achievements:
 
