@@ -3,6 +3,18 @@
 A small achievement tracker and a place to practice GitHub's issue and pull
 request workflows. Work stays in this repository.
 
+## Track progress
+
+Requires Python 3.10 or newer; no dependencies or network access are needed.
+
+```sh
+python3 tracker.py --merged 12
+python3 -m unittest -v
+```
+
+The tracker prints the last reached Pull Shark milestone, the next target,
+and the number of merges remaining. Negative counts are rejected.
+
 ## Achievement checklist
 
 | Achievement | Next action |
