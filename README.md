@@ -1,2 +1,31 @@
-# github-badge-lab
+# GitHub Badge Lab
+
+A small achievement tracker and a place to practice GitHub's issue and pull
+request workflows. Work stays in this repository.
+
+## Achievement checklist
+
+| Achievement | Next action |
+| --- | --- |
+| Quickdraw | Close an issue or pull request within five minutes of opening it. |
+| YOLO | Merge your own pull request without a review, where repository rules allow it. |
+| Pull Shark | Open pull requests that get merged. Reported milestones: 2, 16, 128, 1,024. |
+| Pair Extraordinaire | Collaborate with another person and credit their coauthored work in a merged PR. |
+| Galaxy Brain | Write useful Discussion answers that maintainers accept. |
+| Starstruck | Build a repository that attracts stars from other people. |
+| Public Sponsor | Sponsor an open source maintainer through GitHub Sponsors. This costs money. |
+
+GitHub awards achievements asynchronously. Completing an action does not prove
+that a badge has appeared; check the live profile afterward. Tier thresholds are
+community reported and can change. Historical awards such as Arctic Code Vault
+Contributor cannot be newly earned.
+
+See [GitHub's profile reference](https://docs.github.com/en/account-and-profile/reference/profile-reference#earning-achievements)
+and the [community achievement catalog](https://github.com/Schweinepriester/github-profile-achievements).
+
+## Boundaries
+
+Use real contributions and accurate attribution. Do not manufacture identities,
+stars, accepted answers, or contributions to other people's repositories.
+Sponsorship needs a separate choice of recipient and budget.
 A small GitHub achievement tracker and workflow playground.
