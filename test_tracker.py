@@ -1,6 +1,27 @@
 import unittest
 
-from tracker import pull_shark_progress
+from tracker import live_snapshot, parse_achievements, pull_shark_progress
+
+
+class ProfileParserTests(unittest.TestCase):
+    def test_deduplicates_desktop_and_mobile_badges(self):
+        badge = '<img alt="Achievement: Pull Shark" src="pull-shark-bronze.png">'
+        self.assertEqual(parse_achievements(badge * 2),
+                         [{"name": "Pull Shark", "image_url": "pull-shark-bronze.png"}])
+
+    def test_ignores_other_images_text_and_empty_names(self):
+        html = ('<img alt="Avatar" src="avatar.png">Achievement: YOLO'
+                '<div alt="Achievement: Fake"></div><img alt="Achievement: ">')
+        self.assertEqual(parse_achievements(html), [])
+
+    def test_tolerates_missing_image_url(self):
+        self.assertEqual(parse_achievements('<img alt="Achievement: YOLO">'),
+                         [{"name": "YOLO", "image_url": ""}])
+
+    def test_invalid_username_is_rejected_before_network_access(self):
+        for user in ("", "../other", "--help", "a b", "a" * 40):
+            with self.subTest(user=user), self.assertRaises(ValueError):
+                live_snapshot(user)
 
 
 class PullSharkProgressTests(unittest.TestCase):

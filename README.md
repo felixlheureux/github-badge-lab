@@ -15,6 +15,24 @@ python3 -m unittest -v
 The tracker prints the last reached Pull Shark milestone, the next target,
 and the number of merges remaining. Negative counts are rejected.
 
+To read current activity and publicly displayed achievements:
+
+```sh
+gh auth login
+python3 tracker.py --user YOUR_USERNAME
+```
+
+Live mode requires the [GitHub CLI](https://cli.github.com/) and network access.
+It only reads data. Search results can lag behind merges, and hidden achievements
+cannot be detected. Private PRs may be included when the authenticated account
+can access them. Image URLs preserve GitHub's displayed tier artwork.
+
+You can also inspect a saved public profile without network access:
+
+```sh
+python3 tracker.py --merged 16 --profile-html profile.html
+```
+
 ## Achievement checklist
 
 | Achievement | Next action |
