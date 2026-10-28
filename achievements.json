@@ -1,0 +1,11 @@
+{
+  "pull_shark": {
+    "milestones": [2, 16, 128, 1024],
+    "metric": "merged pull requests authored by the user",
+    "evidence": "community reported; verify against the live GitHub profile"
+  },
+  "solo_actions": ["Quickdraw", "YOLO"],
+  "collaboration": ["Pair Extraordinaire", "Galaxy Brain", "Starstruck"],
+  "paid": ["Public Sponsor"],
+  "reference": "https://github.com/Schweinepriester/github-profile-achievements"
+}
